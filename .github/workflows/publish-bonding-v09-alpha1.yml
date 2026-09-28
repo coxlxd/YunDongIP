@@ -31,10 +31,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view bonding-v0.9-alpha1 >/dev/null 2>&1; then
-            gh release upload bonding-v0.9-alpha1 release/* --clobber
+          if gh release view bonding-v0.9-alpha1 --repo zeruiouo-blip/YunDongIP >/dev/null 2>&1; then
+            gh release upload bonding-v0.9-alpha1 release/* --clobber --repo zeruiouo-blip/YunDongIP
           else
-            gh release create bonding-v0.9-alpha1 release/* \
+            gh release create bonding-v0.9-alpha1 release/* --repo zeruiouo-blip/YunDongIP \
               --target main \
               --title "YunDongIP Bonding v0.9-alpha1 Test" \
               --notes "Experimental binary-only test build. Source remains in the private development repository." \
